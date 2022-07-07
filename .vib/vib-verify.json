@@ -1,0 +1,47 @@
+{
+  "context": {
+    "resources": {
+      "url": "{SHA_ARCHIVE}",
+      "path": "wavefront-proxy-master/docker"
+    }
+  },
+  "phases": {
+    "package": {
+      "actions": [
+        {
+          "action_id": "container-image-package",
+          "params": {
+            "application": {
+              "details": {
+                "name": "wavefront-proxy",
+                "tag": "latest"
+              }
+            }
+          }
+        },
+        {
+          "action_id": "container-image-lint",
+          "params": {
+            "threshold": "error"
+          }
+        }
+      ]
+    },
+    "verify": {
+      "actions": [
+        {
+          "action_id": "trivy",
+          "params": {
+            "threshold": "CRITICAL",
+            "vuln_type": [
+              "OS"
+            ],
+            "application": {
+              "kind": "CONTAINER_IMAGE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
