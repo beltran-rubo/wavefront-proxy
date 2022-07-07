@@ -28,6 +28,10 @@
       ]
     },
     "verify": {
+      "context": {
+        "runtime_parameters": "ZW52OgogICAgLSBuYW1lOiBXQVZFRlJPTlRfVVJMCiAgICAgIHZhbHVlOiBodHRwczovL25pbWJhLndhdmVmcm9udC5jb20vYXBpLwogICAgLSBuYW1lOiBXQVZFRlJPTlRfVE9LRU4KICAgICAgdmFsdWU6IDEyMzQ1Njc4OQ=="
+        }
+      },
       "actions": [
         {
           "action_id": "trivy",
@@ -38,6 +42,17 @@
             ],
             "application": {
               "kind": "CONTAINER_IMAGE"
+            }
+          }
+        },
+        {
+          "action_id": "goss",
+          "params": {
+            "resources": {
+              "path": "/.vib/goss"
+            },
+            "remote": {
+              "workload": "deploy-wavefront-proxy"
             }
           }
         }
