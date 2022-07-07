@@ -2,7 +2,7 @@
   "context": {
     "resources": {
       "url": "{SHA_ARCHIVE}",
-      "path": "wavefront-proxy-master/docker"
+      "path": "docker"
     }
   },
   "phases": {
