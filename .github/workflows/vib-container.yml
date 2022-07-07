@@ -1,0 +1,29 @@
+name: VIB
+on: # rebuild any PRs and main branch changes
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - labeled
+    branches:
+      - main
+      - bitnami:main
+env:
+  CSP_API_URL: https://console.cloud.vmware.com
+  CSP_API_TOKEN: ${{ secrets.CSP_API_TOKEN }}
+  VIB_PUBLIC_URL: https://cp.bromelia.vmware.com
+jobs:
+  vib-verify:
+    runs-on: ubuntu-latest
+    name: Package and Verify
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout Repository
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: vmware-labs/vmware-image-builder-action@main
+        name: Verify Wavefront container
+        with:
+          pipeline: vib-verify.json
