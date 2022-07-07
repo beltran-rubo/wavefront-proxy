@@ -26,4 +26,4 @@ jobs:
         with:
           pipeline: vib-verify.json
         env:
-          VIB_HARBOR_REGISTRY_PASSWORD: ${{ secrets.HARBOR_REGISTRY_PASSWORD }}
+          VIB_ENV_HARBOR_REGISTRY_PASSWORD: ${{ secrets.HARBOR_REGISTRY_PASSWORD }}
