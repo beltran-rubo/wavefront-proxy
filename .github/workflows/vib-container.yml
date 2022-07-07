@@ -6,9 +6,7 @@ on: # rebuild any PRs and main branch changes
       - reopened
       - synchronize
       - labeled
-    branches:
-      - main
-      - bitnami:main
+    branches: [ '**' ]
 env:
   CSP_API_URL: https://console.cloud.vmware.com
   CSP_API_TOKEN: ${{ secrets.CSP_API_TOKEN }}
