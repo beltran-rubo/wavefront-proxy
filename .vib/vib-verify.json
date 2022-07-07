@@ -30,7 +30,6 @@
     "verify": {
       "context": {
         "runtime_parameters": "ZW52OgogICAgLSBuYW1lOiBXQVZFRlJPTlRfVVJMCiAgICAgIHZhbHVlOiBodHRwczovL25pbWJhLndhdmVmcm9udC5jb20vYXBpLwogICAgLSBuYW1lOiBXQVZFRlJPTlRfVE9LRU4KICAgICAgdmFsdWU6IDEyMzQ1Njc4OQ=="
-        }
       },
       "actions": [
         {
