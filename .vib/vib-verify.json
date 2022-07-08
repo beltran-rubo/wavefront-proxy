@@ -55,6 +55,17 @@
               "password": "{VIB_ENV_HARBOR_REGISTRY_PASSWORD}"
             }
           }
+        },
+        {
+          "action_id": "container-image-publish",
+          "params": {
+            "repository": {
+              "kind": "OCI",
+              "url": "oci://docker.io/beltrantest",
+              "username": "beltrantest",
+              "password": "{VIB_ENV_DOCKER_REGISTRY_PASSWORD}"
+            }
+          }
         }
       ]
     }
