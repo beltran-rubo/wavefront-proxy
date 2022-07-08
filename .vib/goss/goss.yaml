@@ -9,10 +9,11 @@ command:
     exec: id -u
     exit-status: 0
     stdout:
-      - '1000'
+      - '1001'
     stderr: [ ]
   java-test:
     exec: java -version
     exit-status: 0
-    stdout:
-    stderr: []
+    stdout: [ ]
+    stderr:
+      - 'OpenJDK 64-Bit Server VM Temurin'
